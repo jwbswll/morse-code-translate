@@ -22,7 +22,6 @@ const morseToEnglish = (morse) => {
 	const toRet = morse
 		.split(" ")
 		.map((char) => {
-			console.log(char);
 			if (char === "") {
 				throw new Error("Please only enter one space between morse characters");
 			} else if (char.length > 4) {

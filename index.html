@@ -4,28 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Morse Code Translator</title>
-  <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+  <link rel="stylesheet" href="./styles/style.css">
   <script src="./DOM.js" type="module" defer></script>
 </head>
 <body>
   <main>
     <h1 class="heading">Morse Code Translator</h1>
     <form class="translator-form">
-      <section>
-        <label for="englishInput">English</label>
-        <input type="text" name="" id="englishInput">
+      <section class="translator-form__input-container">
+        <label class="translator-form__language" for="englishInput">English</label>
+        <textarea class="translator-form__input english" type="text" name="" id="englishInput" placeholder="Enter text"></textarea>
       </section>
-      <section>
-        <label for="morseInput">Morse Code</label>
-        <input type="text" name="" id="morseInput">
+      <section class="translator-form__input-container">
+        <label class="translator-form__language" for="morseInput">Morse Code</label>
+        <textarea class="translator-form__input morse" type="text" name="" id="morseInput" placeholder=". -. - . .-. / -- --- .-. ... ."></textarea>
       </section>
-      <button id="translateBtn">Translate</button>
     </form>
+    <button class="translator-form__translate" id="translateBtn">Translate</button>
     <div id="outputContainer"><p id="output"></p></div>
+    <h2 class="heading">Characters</h2>
     <table>
       <tbody>
         <tr>
-          <td>A</td>
+          <td class="table__top-left">A</td>
           <td>.-</td>
           <td>B</td>
           <td>-...</td>
@@ -93,7 +94,7 @@
           <td>-.--</td>
           <td>Z</td>
           <td>--..</td>
-          <td>" "</td>
+          <td>space</td>
           <td>/</td>
         </tr>
       </tbody>

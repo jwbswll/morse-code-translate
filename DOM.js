@@ -6,36 +6,39 @@ import {
 const englishInput = document.querySelector("#englishInput");
 const morseInput = document.querySelector("#morseInput");
 const translateBtn = document.querySelector("#translateBtn");
-const output = document.querySelector("#output");
+const inputs = document.querySelectorAll(".translator-form__input");
 
 translateBtn.addEventListener("click", (e) => {
 	e.preventDefault();
-	output.innerText = "";
 	if (englishInput.value && morseInput.value) {
-		output.innerText = "Error: Can only translate one language at once";
+		englishInput.value = "";
+		morseInput.value = "";
 	} else if (englishInput.value) {
 		try {
-			const outputValue = document.createTextNode(
-				englishToMorse(englishInput.value)
-			);
-			output.appendChild(outputValue);
-			englishInput.value = "";
+			morseInput.value = englishToMorse(englishInput.value);
 		} catch (e) {
-			const outputValue = document.createTextNode(e);
-			output.appendChild(outputValue);
-			englishInput.value = "";
+			morseInput.value = e;
 		}
 	} else if (morseInput.value) {
 		try {
-			const outputValue = document.createTextNode(
-				morseToEnglish(morseInput.value)
-			);
-			output.appendChild(outputValue);
-			morseInput.value = "";
+			englishInput.value = morseToEnglish(morseInput.value);
 		} catch (e) {
-			const outputValue = document.createTextNode(e);
-			output.appendChild(outputValue);
-			morseInput.value = "";
+			englishInput.value = e;
 		}
 	}
+});
+
+inputs.forEach((input) => {
+	input.addEventListener("click", () => {
+		morseInput.value = "";
+		englishInput.value = "";
+	});
+});
+
+inputs.forEach((input) => {
+	input.addEventListener("keydown", (e) => {
+		if (e.key == "Enter") {
+			e.preventDefault();
+		}
+	});
 });
