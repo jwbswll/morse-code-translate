@@ -5,6 +5,9 @@ const invalidAlphaError = new Error(
 	"Please enter only characters between A and Z and spaces"
 );
 const invalidMorseError = new Error("Please enter a valid Morse character");
+const morseNoSpacesError = new Error(
+	"Morse characters need spaces between them"
+);
 
 describe("Test cases for English to Morse Code function", () => {
 	test("should add a space between morse codes", () => {
@@ -15,7 +18,7 @@ describe("Test cases for English to Morse Code function", () => {
 		expect(englishToMorse("Jack")).toBe(".--- .- -.-. -.-");
 	});
 	test("should translate a space to /", () => {
-		expect(englishToMorse(" ")).toBe("/");
+		expect(englishToMorse("a b c")).toBe(".- / -... / -.-.");
 		expect(englishToMorse("Jack Boswell")).toBe(
 			".--- .- -.-. -.- / -... --- ... .-- . .-.. .-.."
 		);
@@ -48,7 +51,7 @@ describe("Test case for Morse to English translation", () => {
 		expect(morseToEnglish(".--- .- -.-. -.-")).toBe("jack");
 	});
 	test('should translate "/" to a space', () => {
-		expect(morseToEnglish("/")).toBe(" ");
+		expect(morseToEnglish(".- / -... / -.-.")).toBe("a b c");
 		expect(
 			morseToEnglish(".--- .- -.-. -.- / -... --- ... .-- . .-.. .-..")
 		).toBe("jack boswell");
@@ -57,6 +60,11 @@ describe("Test case for Morse to English translation", () => {
 				".. / .--- ..- ... - / .... .. - / .- / - .-. .. -.-. -.- ... .... --- -"
 			)
 		).toBe("i just hit a trickshot");
+	});
+	test("should throw an error when there are no spaces between morse characters", () => {
+		expect(() => {
+			morseToEnglish("...---...");
+		}).toThrow(morseNoSpacesError);
 	});
 	test("should throw an error when argument is not a valid character", () => {
 		expect(() => {

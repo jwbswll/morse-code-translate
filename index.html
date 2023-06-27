@@ -4,20 +4,100 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Morse Code Translator</title>
-  <link rel="stylesheet" href="./styles/style.scss">
+  <!-- <link rel="stylesheet" href="./styles/style.css"> -->
   <script src="./DOM.js" type="module" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-sdfsdf#" crossorigin="anonymous">
 </head>
 <body>
   <main>
-    <form>
-      <label for="englishInput">English</label>
-      <input type="text" name="" id="englishInput">
-      <label for="morseInput">Morse Code</label>
-      <input type="text" name="" id="morseInput">
+    <h1 class="heading">Morse Code Translator</h1>
+    <form class="translator-form">
+      <section>
+        <label for="englishInput">English</label>
+        <input type="text" name="" id="englishInput">
+      </section>
+      <section>
+        <label for="morseInput">Morse Code</label>
+        <input type="text" name="" id="morseInput">
+      </section>
       <button id="translateBtn">Translate</button>
     </form>
     <div id="outputContainer"><p id="output"></p></div>
+    <table>
+      <tbody>
+        <tr>
+          <td>A</td>
+          <td>.-</td>
+          <td>B</td>
+          <td>-...</td>
+          <td>C</td>
+          <td>-.-.</td>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td>-..</td>
+          <td>E</td>
+          <td>.</td>
+          <td>F</td>
+          <td>..-.</td>
+        </tr>
+        <tr>
+          <td>G</td>
+          <td>--.</td>
+          <td>H</td>
+          <td>....</td>
+          <td>I</td>
+          <td>..</td>
+        </tr>
+        <tr>
+          <td>J</td>
+          <td>.---</td>
+          <td>K</td>
+          <td>-.-</td>
+          <td>L</td>
+          <td>.-..</td>
+        </tr>
+        <tr>
+          <td>M</td>
+          <td>--</td>
+          <td>N</td>
+          <td>-.</td>
+          <td>O</td>
+          <td>---</td>
+        </tr>
+        <tr>
+          <td>P</td>
+          <td>.--.</td>
+          <td>Q</td>
+          <td>--.-</td>
+          <td>R</td>
+          <td>.-.</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td>...</td>
+          <td>T</td>
+          <td>-</td>
+          <td>U</td>
+          <td>..-</td>
+        </tr>
+        <tr>
+          <td>V</td>
+          <td>...-</td>
+          <td>W</td>
+          <td>.--</td>
+          <td>X</td>
+          <td>-..-</td>
+        </tr>
+        <tr>
+          <td>Y</td>
+          <td>-.--</td>
+          <td>Z</td>
+          <td>--..</td>
+          <td>" "</td>
+          <td>/</td>
+        </tr>
+      </tbody>
+    </table>
   </main>
 </body>
 </html>

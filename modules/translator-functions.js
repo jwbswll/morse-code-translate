@@ -22,14 +22,18 @@ const morseToEnglish = (morse) => {
 	const toRet = morse
 		.split(" ")
 		.map((char) => {
-			if (!morseChars[char]) {
+			console.log(char);
+			if (char === "") {
+				throw new Error("Please only enter one space between morse characters");
+			} else if (char.length > 4) {
+				throw new Error("Morse characters need spaces between them");
+			} else if (!morseChars[char]) {
 				throw new Error("Please enter a valid Morse character");
 			}
 			return morseChars[char];
 		})
 		.join("")
-		.toLowerCase()
-		.trim();
+		.toLowerCase();
 	return toRet;
 };
 

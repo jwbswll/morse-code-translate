@@ -11,7 +11,9 @@ const output = document.querySelector("#output");
 translateBtn.addEventListener("click", (e) => {
 	e.preventDefault();
 	output.innerText = "";
-	if (englishInput.value) {
+	if (englishInput.value && morseInput.value) {
+		output.innerText = "Error: Can only translate one language at once";
+	} else if (englishInput.value) {
 		try {
 			const outputValue = document.createTextNode(
 				englishToMorse(englishInput.value)
