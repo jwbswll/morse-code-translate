@@ -1,5 +1,5 @@
-import { englishToMorse } from "./translator.js";
-import { morseToEnglish } from "./translator.js";
+import { englishToMorse } from "./modules/translator-functions.js";
+import { morseToEnglish } from "./modules/translator-functions.js";
 
 const invalidAlphaError = new Error(
 	"Please enter only characters between A and Z and spaces"
