@@ -1,7 +1,7 @@
 import { englishChars, morseChars } from "./character-objects.js";
 
 const englishToMorse = (english) => {
-	const toRet = english
+	return english
 		.trim()
 		.toUpperCase()
 		.split("")
@@ -15,11 +15,10 @@ const englishToMorse = (english) => {
 		})
 		.join("")
 		.trim();
-	return toRet;
 };
 
 const morseToEnglish = (morse) => {
-	const toRet = morse
+	return morse
 		.split(" ")
 		.map((char) => {
 			if (char === "") {
@@ -33,7 +32,6 @@ const morseToEnglish = (morse) => {
 		})
 		.join("")
 		.toLowerCase();
-	return toRet;
 };
 
 export { englishToMorse, morseToEnglish };

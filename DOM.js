@@ -30,12 +30,13 @@ translateBtn.addEventListener("click", (e) => {
 
 inputs.forEach((input) => {
 	input.addEventListener("click", () => {
-		morseInput.value = "";
-		englishInput.value = "";
+		if (input.classList.contains("english")) {
+			morseInput.value = "";
+			console.log("english");
+		} else {
+			englishInput.value = "";
+		}
 	});
-});
-
-inputs.forEach((input) => {
 	input.addEventListener("keydown", (e) => {
 		if (e.key == "Enter") {
 			e.preventDefault();
