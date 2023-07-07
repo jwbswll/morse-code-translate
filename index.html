@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morse Code Translator</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <script src="./DOM.js" type="module" defer></script>
+</head>
+<body>
+  <main>
+    <h1 class="heading">Morse Code Translator</h1>
+
+    <form class="translator-form">
+
+      <section class="translator-form__input-container">
+        <label class="translator-form__language" for="englishInput">English</label>
+        <textarea class="translator-form__input english" type="text" name="" id="englishInput" placeholder="Enter text"></textarea>
+      </section>
+
+      <section class="translator-form__input-container">
+        <label class="translator-form__language" for="morseInput">Morse Code</label>
+        <textarea class="translator-form__input morse" type="text" name="" id="morseInput" placeholder=". -. - . .-. / -- --- .-. ... ."></textarea>
+      </section>
+      
+    </form>
+
+    <button class="translator-form__translate" id="translateBtn">Translate</button>
+
+    <h2 class="heading">Characters</h2>
+    <table>
+      <tbody>
+        <tr>
+          <td class="table__top-left">A</td>
+          <td>.-</td>
+          <td>B</td>
+          <td>-...</td>
+          <td>C</td>
+          <td>-.-.</td>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td>-..</td>
+          <td>E</td>
+          <td>.</td>
+          <td>F</td>
+          <td>..-.</td>
+        </tr>
+        <tr>
+          <td>G</td>
+          <td>--.</td>
+          <td>H</td>
+          <td>....</td>
+          <td>I</td>
+          <td>..</td>
+        </tr>
+        <tr>
+          <td>J</td>
+          <td>.---</td>
+          <td>K</td>
+          <td>-.-</td>
+          <td>L</td>
+          <td>.-..</td>
+        </tr>
+        <tr>
+          <td>M</td>
+          <td>--</td>
+          <td>N</td>
+          <td>-.</td>
+          <td>O</td>
+          <td>---</td>
+        </tr>
+        <tr>
+          <td>P</td>
+          <td>.--.</td>
+          <td>Q</td>
+          <td>--.-</td>
+          <td>R</td>
+          <td>.-.</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td>...</td>
+          <td>T</td>
+          <td>-</td>
+          <td>U</td>
+          <td>..-</td>
+        </tr>
+        <tr>
+          <td>V</td>
+          <td>...-</td>
+          <td>W</td>
+          <td>.--</td>
+          <td>X</td>
+          <td>-..-</td>
+        </tr>
+        <tr>
+          <td>Y</td>
+          <td>-.--</td>
+          <td>Z</td>
+          <td>--..</td>
+          <td>space</td>
+          <td>/</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
